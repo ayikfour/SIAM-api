@@ -20,15 +20,10 @@ app.get("/", async (req, res) => {
 });
 
 app.post("/login", Login);
-
 app.get("/jadwal", Auth, Jadwal);
-
 app.get("/profile", Auth, Profile);
-
 app.get("/khs", Auth, Khs);
-
 app.get("/khs/:semester", Auth, getKhs);
-
 app.get("/absensi", Auth, Absensi);
 
 let port = config.port;

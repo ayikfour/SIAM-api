@@ -1,5 +1,5 @@
 import cheerio from "cheerio";
-import Browser from "./browser";
+import Browser from "../config/browser";
 
 export default async function Absen(req, res) {
   const url = "https://siam.ub.ac.id/absensi.php";

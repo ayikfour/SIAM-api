@@ -1,5 +1,5 @@
 import cheerio from "cheerio";
-import Browser from "./browser";
+import Browser from "../config/browser";
 
 export default async function Jadwal(req, res) {
   const url = "https://siam.ub.ac.id/class.php";
@@ -7,6 +7,7 @@ export default async function Jadwal(req, res) {
   try {
     const cookies = req.auth.cookies[1];
     const { page, browser } = await Browser();
+
     await page.setCookie(cookies);
     const response = await page.goto(url);
     await page.waitForSelector("td[bgcolor='#cccccc']");

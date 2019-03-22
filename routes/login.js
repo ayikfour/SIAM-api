@@ -1,6 +1,6 @@
-import Portal from "./portal";
-import jwt from "jsonwebtoken";
+import Portal from "../config/portal";
 import config from "../config/config";
+import jwt from "jsonwebtoken";
 
 export default async function Login(req, res) {
   try {

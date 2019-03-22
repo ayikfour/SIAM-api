@@ -1,5 +1,5 @@
 import cheerio from "cheerio";
-import Browser from "./browser";
+import Browser from "../config/browser";
 
 async function init(cookies) {
   const url = "https://siam.ub.ac.id/khs.php";
@@ -13,7 +13,7 @@ async function init(cookies) {
   return { semester: option.length, browser, page };
 }
 
-export async function Khs(req, res) {
+async function khs(req, res) {
   try {
     const cookies = req.auth.cookies[1];
     const { semester, browser } = await init(cookies);
@@ -25,7 +25,7 @@ export async function Khs(req, res) {
   }
 }
 
-export async function getKhs(req, res) {
+async function getKhs(req, res) {
   try {
     const params = req.params.semester;
     const cookies = req.auth.cookies[1];
@@ -105,3 +105,6 @@ function split(matkul, $) {
 
   return data;
 }
+
+const Khs = { khs, getKhs };
+export default Khs;

@@ -1,6 +1,5 @@
 import cheerio from "cheerio";
-import Portal from "./portal";
-import Browser from "./browser";
+import Browser from "../config/browser";
 
 export default async function Profile(req, res) {
   const url = "https://siam.ub.ac.id/akademik.php";
